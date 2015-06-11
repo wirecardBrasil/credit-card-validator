@@ -56,4 +56,52 @@ public class AmexCreditCardTest {
         assertFalse(AmexCreditCard.isBrandAmex(validCard));
     }
 
+    @Test
+    public void verificaCartaoAmexInvalidoComecandoCom_37(){
+        String validCard = "37641111";
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
+    @Test
+    public void verificaCartaoAmexInvalidoComecandoCom_34(){
+        String validCard = "34910200676";
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
+    @Test
+    public void verificaCartaoAmexComLetraComecandoCom_37(){
+        String validCard = "3764hbgvffv33411";
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
+    @Test
+    public void verificaCartaoAmexComLetraComecandoCom_34(){
+        String validCard = "3491kj02006766";
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
+    @Test
+    public void verificaCartaoAmexComCaracterEspecialComecandoCom_37(){
+        String validCard = "376 4111 122223 31";
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
+    @Test
+    public void verificaCartaoAmexComCaracterEspecialComecandoCom_34(){
+        String validCard = "34 91020067623   26";
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoAmexEhNulo(){
+        String validCard = null;
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoAmexEhVazio(){
+        String validCard = "";
+        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+    }
+
 }

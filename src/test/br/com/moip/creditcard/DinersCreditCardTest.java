@@ -49,4 +49,33 @@ public class DinersCreditCardTest {
         assertFalse(DinersCreditCard.isBrandDiners(validCard));
     }
 
+    @Test
+    public void verificaCartaoDinersInvalido(){
+        String validCard = "301111221";
+        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+    }
+
+    @Test
+    public void verificaCartaoDinersComLetra(){
+        String validCard = "30111hjhjh22233";
+        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+    }
+
+    @Test
+    public void verificaCartaoDinersComCaracterEspecial(){
+        String validCard = "301 111*22223331";
+        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoDinersEhNulo(){
+        String validCard = null;
+        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoDinersEhVazio(){
+        String validCard = "";
+        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+    }
 }

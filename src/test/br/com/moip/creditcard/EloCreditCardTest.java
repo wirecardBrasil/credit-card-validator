@@ -14,42 +14,42 @@ public class EloCreditCardTest {
     };
 
     @Test
-    public void identifiesEloStartingWith_451416() throws Exception {
+    public void verificaCartaoEloComecandoCom_451416() throws Exception {
         String validCard = "4514160123456789";
         assertTrue(validCard.length() == 16);
         assertTrue(EloCreditCard.isBrandElo(validCard));
     }
 
     @Test
-    public void identifies_NON_EloStartingWith_451416() throws Exception {
+    public void verificaCartaoEloNaoComecandoCom_451416() throws Exception {
         String validCard = "45141601234567890";
         assertFalse(validCard.length() == 16);
         assertFalse(EloCreditCard.isBrandElo(validCard));
     }
 
     @Test
-    public void identifiesEloStartingWith_5067() throws Exception {
+    public void verificaCartaoEloComecandoCom_5067() throws Exception {
         String validCard = "5067012345678901";
         assertTrue(validCard.length() == 16);
         assertTrue(EloCreditCard.isBrandElo(validCard));
     }
 
     @Test
-    public void identifies_NON_EloStartingWith_5067() throws Exception {
+    public void verificaCartaoEloNaoComecandoCom_5067() throws Exception {
         String validCard = "50670123456789010";
         assertFalse(validCard.length() == 16);
         assertFalse(EloCreditCard.isBrandElo(validCard));
     }
 
     @Test
-    public void identifies_NON_EloStartingWith_WrongBin() throws Exception {
+    public void verificaCartaoELoNaoComecandoComBinInvalido() throws Exception {
         String validCard = "1111101234567890";
         assertTrue(validCard.length() == 16);
         assertFalse(EloCreditCard.isBrandElo(validCard));
     }
 
     @Test
-    public void identifiesEloStartingWith_AnyBin() throws Exception {
+    public void verificaCartaoEloComecandoComQualquerBin() throws Exception {
         for (String bin : ELO_BINS) {
             String validLengthCard = bin + (bin.length() == 5 ? "01234567890" : "0123456789");
             assertTrue(validLengthCard.length() == 16);
@@ -58,7 +58,7 @@ public class EloCreditCardTest {
     }
 
     @Test
-    public void identifies_NON_EloStartingWith_AnyBin() throws Exception {
+    public void verificaCartaoEloNaoComecandoComQualquerBin() throws Exception {
         for (String bin : ELO_BINS) {
             String invalidLengthCard = bin + (bin.length() == 5 ? "012345678901" : "01234567890");
             assertFalse(invalidLengthCard.length() == 16);
@@ -99,6 +99,36 @@ public class EloCreditCardTest {
     @Test
     public void verificaCartaoEloInformandoCartaoDiners(){
         String validCard = "30111122223331";
+        assertFalse(EloCreditCard.isBrandElo(validCard));
+    }
+
+    @Test
+    public void verificaCartaoEloInvalido(){
+        String validCard = "63629700";
+        assertFalse(EloCreditCard.isBrandElo(validCard));
+    }
+
+    @Test
+    public void verificaCartaoEloComLetra(){
+        String validCard = "636297qwe04573";
+        assertFalse(EloCreditCard.isBrandElo(validCard));
+    }
+
+    @Test
+    public void verificaCartaoEloComCaracterEspecial(){
+        String validCard = "63629700 004 57013";
+        assertFalse(EloCreditCard.isBrandElo(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoEloEhNulo(){
+        String validCard = null;
+        assertFalse(EloCreditCard.isBrandElo(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoEhVazio(){
+        String validCard = "";
         assertFalse(EloCreditCard.isBrandElo(validCard));
     }
 }

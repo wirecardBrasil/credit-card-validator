@@ -50,4 +50,34 @@ public class VisaCreditCardTest {
         assertFalse(VisaCreditCard.isBrandVisa(validCard));
     }
 
+    @Test
+    public void verificaCartaoVisaInvalido(){
+        String validCard = "407302";
+        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+    }
+
+    @Test
+    public void verificaCartaoVisaComLetra(){
+        String validCard = "40730200000qwe02";
+        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+    }
+
+    @Test
+    public void verificaCartaoVisarComCaracterEspecial(){
+        String validCard = "40730-*/20000000002";
+        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoVisaEhNulo(){
+        String validCard = null;
+        assertFalse(MasterCreditCard.isBrandMaster(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoVisaEhVazio(){
+        String validCard = "";
+        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+    }
+
 }

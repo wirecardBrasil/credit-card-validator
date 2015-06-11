@@ -11,7 +11,7 @@ public class HipercardCreditCardTest {
     };
 
     @Test
-    public void identifiesHipercard() throws Exception {
+    public void verificaCartaoHipercard() throws Exception {
         for (String bin : HIPERCARD_BINS) {
             String cardNumber = "6062825624254001";
             assertTrue(cardNumber.length() == 16);
@@ -52,6 +52,36 @@ public class HipercardCreditCardTest {
     @Test
     public void verificaCartaoHipercardInformandoCartaoDiners(){
         String validCard = "30111122223331";
+        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+    }
+
+    @Test
+    public void verificaCartaoHipercardInvalido(){
+        String validCard = "606282562";
+        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+    }
+
+    @Test
+    public void verificaCartaoHipercardComLetra(){
+        String validCard = "606282562asdf001";
+        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+    }
+
+    @Test
+    public void verificaCartaoHipercardComCaracterEspecial(){
+        String validCard = "606282 5624*-254001";
+        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoHipercardEhNulo(){
+        String validCard = null;
+        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+    }
+
+    @Test
+    public void verificaSeCartaoHipercardEhVazio(){
+        String validCard = "";
         assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
     }
 }
