@@ -2,7 +2,8 @@ package br.com.moip.creditcard;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class MasterCreditCardTest {
 
@@ -51,31 +52,31 @@ public class MasterCreditCardTest {
 
     @Test
     public void verificaCartaoMasterInvalido(){
-        String validCard = "5555";
-        assertFalse(MasterCreditCard.isBrandMaster(validCard));
+        String invalidCard = "5555";
+        assertFalse(MasterCreditCard.isBrandMaster(invalidCard));
     }
 
     @Test
     public void verificaCartaoMasterComLetra(){
-        String validCard = "5555asdf77778884";
-        assertFalse(MasterCreditCard.isBrandMaster(validCard));
+        String invalidCard = "5555asdf77778884";
+        assertFalse(MasterCreditCard.isBrandMaster(invalidCard));
     }
 
     @Test
     public void verificaCartaoMasterComCaracterEspecial(){
-        String validCard = "555 666+7777888@";
-        assertFalse(MasterCreditCard.isBrandMaster(validCard));
+        String invalidCard = "555 666+7777888@";
+        assertFalse(MasterCreditCard.isBrandMaster(invalidCard));
     }
 
     @Test
     public void verificaSeCartaoMasterEhNulo(){
-        String validCard = null;
-        assertFalse(MasterCreditCard.isBrandMaster(validCard));
+        String nullableCard = null;
+        assertFalse(MasterCreditCard.isBrandMaster(nullableCard));
     }
 
     @Test
     public void verificaSeCartaoMasterEhVazio(){
-        String validCard = "";
-        assertFalse(MasterCreditCard.isBrandMaster(validCard));
+        String emptyCard = "";
+        assertFalse(MasterCreditCard.isBrandMaster(emptyCard));
     }
 }

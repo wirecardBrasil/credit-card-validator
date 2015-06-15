@@ -1,9 +1,9 @@
 package br.com.moip.creditcard;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class VisaCreditCardTest {
 
@@ -52,32 +52,32 @@ public class VisaCreditCardTest {
 
     @Test
     public void verificaCartaoVisaInvalido(){
-        String validCard = "407302";
-        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+        String invalidCard = "407302";
+        assertFalse(VisaCreditCard.isBrandVisa(invalidCard));
     }
 
     @Test
     public void verificaCartaoVisaComLetra(){
-        String validCard = "40730200000qwe02";
-        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+        String invalidCard = "40730200000qwe02";
+        assertFalse(VisaCreditCard.isBrandVisa(invalidCard));
     }
 
     @Test
     public void verificaCartaoVisarComCaracterEspecial(){
-        String validCard = "40730-*/20000000002";
-        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+        String invalidCard = "40730-*/20000000002";
+        assertFalse(VisaCreditCard.isBrandVisa(invalidCard));
     }
 
     @Test
     public void verificaSeCartaoVisaEhNulo(){
-        String validCard = null;
-        assertFalse(MasterCreditCard.isBrandMaster(validCard));
+        String nullableCard = null;
+        assertFalse(MasterCreditCard.isBrandMaster(nullableCard));
     }
 
     @Test
     public void verificaSeCartaoVisaEhVazio(){
-        String validCard = "";
-        assertFalse(VisaCreditCard.isBrandVisa(validCard));
+        String emptyCard = "";
+        assertFalse(VisaCreditCard.isBrandVisa(emptyCard));
     }
 
 }

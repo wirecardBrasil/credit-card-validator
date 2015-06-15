@@ -2,12 +2,13 @@ package br.com.moip.creditcard;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class DinersCreditCardTest {
 
     @Test
-    public void verificaCartaoDinersComecandocom_301(){
+    public void verificaCartaoDinersComecandoCom_301(){
         String validCard = "30111122223331";
         assertTrue(validCard.length() == 14);
         assertTrue(DinersCreditCard.isBrandDiners(validCard));
@@ -51,31 +52,31 @@ public class DinersCreditCardTest {
 
     @Test
     public void verificaCartaoDinersInvalido(){
-        String validCard = "301111221";
-        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+        String invalidCard = "301111221";
+        assertFalse(DinersCreditCard.isBrandDiners(invalidCard));
     }
 
     @Test
     public void verificaCartaoDinersComLetra(){
-        String validCard = "30111hjhjh22233";
-        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+        String invalidCard = "30111hjhjh22233";
+        assertFalse(DinersCreditCard.isBrandDiners(invalidCard));
     }
 
     @Test
     public void verificaCartaoDinersComCaracterEspecial(){
-        String validCard = "301 111*22223331";
-        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+        String invalidCard = "301 111*22223331";
+        assertFalse(DinersCreditCard.isBrandDiners(invalidCard));
     }
 
     @Test
     public void verificaSeCartaoDinersEhNulo(){
-        String validCard = null;
-        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+        String nullableCard = null;
+        assertFalse(DinersCreditCard.isBrandDiners(nullableCard));
     }
 
     @Test
     public void verificaSeCartaoDinersEhVazio(){
-        String validCard = "";
-        assertFalse(DinersCreditCard.isBrandDiners(validCard));
+        String emptyCard = "";
+        assertFalse(DinersCreditCard.isBrandDiners(emptyCard));
     }
 }

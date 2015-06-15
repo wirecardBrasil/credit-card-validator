@@ -57,31 +57,31 @@ public class HipercardCreditCardTest {
 
     @Test
     public void verificaCartaoHipercardInvalido(){
-        String validCard = "606282562";
-        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+        String invalidCard = "606282562";
+        assertFalse(HipercardCreditCard.isBrandHipercard(invalidCard));
     }
 
     @Test
     public void verificaCartaoHipercardComLetra(){
-        String validCard = "606282562asdf001";
-        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+        String invalidCard = "606282562asdf001";
+        assertFalse(HipercardCreditCard.isBrandHipercard(invalidCard));
     }
 
     @Test
     public void verificaCartaoHipercardComCaracterEspecial(){
-        String validCard = "606282 5624*-254001";
-        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+        String invalidCard = "606282 5624*-254001";
+        assertFalse(HipercardCreditCard.isBrandHipercard(invalidCard));
     }
 
     @Test
     public void verificaSeCartaoHipercardEhNulo(){
-        String validCard = null;
-        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+        String nullableCard = null;
+        assertFalse(HipercardCreditCard.isBrandHipercard(nullableCard));
     }
 
     @Test
     public void verificaSeCartaoHipercardEhVazio(){
-        String validCard = "";
-        assertFalse(HipercardCreditCard.isBrandHipercard(validCard));
+        String emptyCard = "";
+        assertFalse(HipercardCreditCard.isBrandHipercard(emptyCard));
     }
 }

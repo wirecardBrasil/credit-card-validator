@@ -2,19 +2,20 @@ package br.com.moip.creditcard;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class AmexCreditCardTest {
 
     @Test
-    public void verificaCartaoAmexComecandocom_37(){
+    public void verificaCartaoAmexComecandoCom_37(){
         String validCard = "376411112222331";
         assertTrue(validCard.length() == 15);
         assertTrue(AmexCreditCard.isBrandAmex(validCard));
     }
 
     @Test
-    public void verificaCartaoAmexComecandocom_34(){
+    public void verificaCartaoAmexComecandoCom_34(){
         String validCard = "349102006762326";
         assertTrue(validCard.length() == 15);
         assertTrue(AmexCreditCard.isBrandAmex(validCard));
@@ -58,50 +59,50 @@ public class AmexCreditCardTest {
 
     @Test
     public void verificaCartaoAmexInvalidoComecandoCom_37(){
-        String validCard = "37641111";
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String invalidCard = "37641111";
+        assertFalse(AmexCreditCard.isBrandAmex(invalidCard));
     }
 
     @Test
     public void verificaCartaoAmexInvalidoComecandoCom_34(){
-        String validCard = "34910200676";
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String invalidCard = "34910200676";
+        assertFalse(AmexCreditCard.isBrandAmex(invalidCard));
     }
 
     @Test
     public void verificaCartaoAmexComLetraComecandoCom_37(){
-        String validCard = "3764hbgvffv33411";
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String invalidCard = "3764hbgvffv33411";
+        assertFalse(AmexCreditCard.isBrandAmex(invalidCard));
     }
 
     @Test
     public void verificaCartaoAmexComLetraComecandoCom_34(){
-        String validCard = "3491kj02006766";
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String invalidCard = "3491kj02006766";
+        assertFalse(AmexCreditCard.isBrandAmex(invalidCard));
     }
 
     @Test
     public void verificaCartaoAmexComCaracterEspecialComecandoCom_37(){
-        String validCard = "376 4111 122223 31";
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String invalidCard = "376 4111 122223 31";
+        assertFalse(AmexCreditCard.isBrandAmex(invalidCard));
     }
 
     @Test
     public void verificaCartaoAmexComCaracterEspecialComecandoCom_34(){
-        String validCard = "34 91020067623   26";
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String invalidCard = "34 91020067623   26";
+        assertFalse(AmexCreditCard.isBrandAmex(invalidCard));
     }
 
     @Test
     public void verificaSeCartaoAmexEhNulo(){
-        String validCard = null;
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String nullableCard = null;
+        assertFalse(AmexCreditCard.isBrandAmex(nullableCard));
     }
 
     @Test
     public void verificaSeCartaoAmexEhVazio(){
-        String validCard = "";
-        assertFalse(AmexCreditCard.isBrandAmex(validCard));
+        String emptyCard = "";
+        assertFalse(AmexCreditCard.isBrandAmex(emptyCard));
     }
 
 }
