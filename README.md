@@ -1,6 +1,6 @@
 # credit-card-validator
 
-https://travis-ci.org/moip/credit-card-validator.svg?branch=master
+[![Build Status](https://travis-ci.org/moip/credit-card-validator.svg?branch=master)](https://travis-ci.org/moip/credit-card-validator)
 
 ### O que é o credit card validator?
 
