@@ -1,0 +1,7 @@
+language: java
+jdk:
+        - oraclejdk8
+        - oraclejdk7
+        - openjdk7
+install: ./gradlew dependencies -PossrhUsername=username -PossrhPassword=password
+script: ./gradlew test -PossrhUsername=username -PossrhPassword=password
