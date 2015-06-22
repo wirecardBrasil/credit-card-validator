@@ -5,6 +5,18 @@
 
 É uma biblioteca que faz a validação das bandeiras e cartões aceitos pelo Moip.
 
+### Usando na sua aplicação
+
+Adicionar a dependência no seu `pom.xml`
+
+```xml
+<dependency>
+  <groupId>br.com.moip</groupId>
+  <artifactId>credit-card-validator</artifactId>
+  <version>0.0.1</version>
+</dependency>
+```
+
 ### Validar um número de cartão de crédito
 
 Para todas as validações é retornado um boolean se a condição é valida ou não.
