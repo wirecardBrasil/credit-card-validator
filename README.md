@@ -1,9 +1,22 @@
 # credit-card-validator
 
+[![Build Status](https://travis-ci.org/moip/credit-card-validator.svg?branch=master)](https://travis-ci.org/moip/credit-card-validator)
 
 ### O que é o credit card validator?
 
 É uma biblioteca que faz a validação das bandeiras e cartões aceitos pelo Moip.
+
+### Usando na sua aplicação
+
+Adicionar a dependência no seu `pom.xml`
+
+```xml
+<dependency>
+  <groupId>br.com.moip</groupId>
+  <artifactId>credit-card-validator</artifactId>
+  <version>0.0.1</version>
+</dependency>
+```
 
 ### Validar um número de cartão de crédito
 
