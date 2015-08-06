@@ -1,5 +1,7 @@
 # credit-card-validator
 
+[![Join the chat at https://gitter.im/moip/credit-card-validator](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/moip/credit-card-validator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://travis-ci.org/moip/credit-card-validator.svg?branch=master)](https://travis-ci.org/moip/credit-card-validator)
 
 ### O que é o credit card validator?
