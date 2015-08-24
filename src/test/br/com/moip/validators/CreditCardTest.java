@@ -30,7 +30,7 @@ public class CreditCardTest {
     @Test
     public void deveIdentificarBandeiraDinners(){
         CreditCard creditCard = new CreditCard("30111122223331");
-        Assert.assertEquals(Brands.DINNERS, creditCard.getBrand());
+        Assert.assertEquals(Brands.DINERS, creditCard.getBrand());
     }
 
     @Test

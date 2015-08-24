@@ -30,7 +30,7 @@ public class CreditCard {
             return Brands.AMERICAN_EXPRESS;
         }
         if (DinersCreditCard.isBrandDiners(creditCard)) {
-            return Brands.DINNERS;
+            return Brands.DINERS;
         }
         if (HipercardCreditCard.isBrandHipercard(creditCard)) {
             return Brands.HIPERCARD;
