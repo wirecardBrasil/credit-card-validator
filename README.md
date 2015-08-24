@@ -14,7 +14,7 @@ Adicionar a dependência no seu `pom.xml`
 <dependency>
   <groupId>br.com.moip</groupId>
   <artifactId>credit-card-validator</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 </dependency>
 ```
 
@@ -24,9 +24,9 @@ Para todas as validações é retornado um boolean se a condição é valida ou 
 
 ### Validando o número de cartão
 ```java
-CreditCard.isValid("5555666677778884");   //return true
-CreditCard.isValid("129738465");          //return false
-CreditCard.isValid("5555");               //return false
+new CreditCard("5555666677778884").isValid();   //return true
+new CreditCard("129738465").isValid();          //return false
+new CreditCard("5555").isValid();               //return false
 ```
 
 Possiveis retornos:
@@ -35,13 +35,13 @@ Possiveis retornos:
 ### Identificando a bandeira do cartão
 
 ```java
-CreditCard.getBrand("5555666677778884");    //return MASTERCARD
-CreditCard.getBrand("4111111111111111");    //return VISA
-CreditCard.getBrand("341111111111111");     //return AMEX
-CreditCard.getBrand("30111122223331");      //return DINERS
-CreditCard.getBrand("3841001111222233334"); //return HIPERCARD
-CreditCard.getBrand("4514160123456789");    //return ELO
-CreditCard.getBrand("6370950000000005");    //return HIPER
+new CreditCard("5555666677778884").getBrand();       //return MASTERCARD
+new CreditCard("4111111111111111").getBrand();       //return VISA
+new CreditCard("341111111111111").getBrand();        //return AMEX
+new CreditCard("30111122223331").getBrand();         //return DINERS
+new CreditCard("3841001111222233334").getBrand();    //return HIPERCARD
+new CreditCard("4514160123456789").getBrand();       //return ELO
+newCreditCard("6370950000000005").getBrand();        //return HIPER
 ```
 
 Possiveis retornos:
