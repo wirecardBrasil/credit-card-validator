@@ -27,13 +27,10 @@ Para todas as validações é retornado um boolean se a condição é valida ou 
 ### Validando o número de cartão
 ```java
 new CreditCard("5555666677778884").isValid();   //return true
-<<<<<<< HEAD
 new CreditCard("129738465").isValid();          //return false
 new CreditCard("5555").isValid();               //return false
-=======
 new CreditCard("129738465"). isValid();          //return false
 new CreditCard("5555").isValid;               //return false
->>>>>>> e0304bd8ac5a541eb7e491595c25a1eaee82f411
 ```
 
 Possiveis retornos:
@@ -42,15 +39,6 @@ Possiveis retornos:
 ### Identificando a bandeira do cartão
 
 ```java
-<<<<<<< HEAD
-new CreditCard("5555666677778884").getBrand();       //return MASTERCARD
-new CreditCard("4111111111111111").getBrand();       //return VISA
-new CreditCard("341111111111111").getBrand();        //return AMEX
-new CreditCard("30111122223331").getBrand();         //return DINERS
-new CreditCard("3841001111222233334").getBrand();    //return HIPERCARD
-new CreditCard("4514160123456789").getBrand();       //return ELO
-newCreditCard("6370950000000005").getBrand();        //return HIPER
-=======
 new CreditCard("5555666677778884").getBrand();    //return MASTERCARD
 new CreditCard("4111111111111111").getBrand();    //return VISA
 new CreditCard("341111111111111").getBrand();     //return AMEX
@@ -58,7 +46,6 @@ new CreditCard("30111122223331").getBrand();      //return DINERS
 new CreditCard("3841001111222233334").getBrand(); //return HIPERCARD
 new CreditCard("4514160123456789").getBrand();    //return ELO
 new CreditCard("6370950000000005").getBrand();    //return HIPER
->>>>>>> e0304bd8ac5a541eb7e491595c25a1eaee82f411
 ```
 
 Possiveis retornos:
