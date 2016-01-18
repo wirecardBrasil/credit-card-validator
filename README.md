@@ -14,7 +14,7 @@ Adicionar a dependência no seu `pom.xml`
 <dependency>
   <groupId>br.com.moip</groupId>
   <artifactId>credit-card-validator</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 
