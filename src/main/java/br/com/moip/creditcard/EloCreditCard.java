@@ -48,10 +48,12 @@ public class EloCreditCard {
 
     private static boolean isInEloRange(final String number) {
         for (int i = 0; i < ELO_RANGES.size(); i++) {
+
             int startingRange = Integer.parseInt(ELO_RANGES.get(i)[0]);
             int endingRange = Integer.parseInt(ELO_RANGES.get(i)[1]);
             int parsedNumber = Integer.parseInt(number);
-            if (parsedNumber >= startingRange && parsedNumber <= endingRange);
+            
+            if (parsedNumber >= startingRange && parsedNumber <= endingRange) return true;
         }
         return false;
     }
