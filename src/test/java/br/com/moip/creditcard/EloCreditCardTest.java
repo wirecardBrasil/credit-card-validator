@@ -2,7 +2,7 @@ package br.com.moip.creditcard;
 
 import org.junit.Test;
 
-import static br.com.moip.creditcard.EloCreditCard.*;
+import static br.com.moip.creditcard.EloCreditCard.isBrandElo;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -12,34 +12,6 @@ public class EloCreditCardTest {
             "401178", "401179", "431274", "438935", "451416", "457393", "457631", "457632", "504175", "627780",
             "636297", "636368"
     };
-
-    @Test
-    public void verificaCartaoEloComecandoCom_451416() throws Exception {
-        String validCard = "4514160123456789";
-        assertTrue(validCard.length() == 16);
-        assertTrue(isBrandElo(validCard));
-    }
-
-    @Test
-    public void verificaCartaoEloNaoComecandoCom_451416() throws Exception {
-        String validCard = "45141601234567890";
-        assertFalse(validCard.length() == 16);
-        assertFalse(isBrandElo(validCard));
-    }
-
-    @Test
-    public void verificaCartaoEloComecandoCom_5067() throws Exception {
-        String validCard = "5067012345678901";
-        assertTrue(validCard.length() == 16);
-        assertTrue(isBrandElo(validCard));
-    }
-
-    @Test
-    public void verificaCartaoEloNaoComecandoCom_5067() throws Exception {
-        String validCard = "50670123456789010";
-        assertFalse(validCard.length() == 16);
-        assertTrue(isBrandElo(validCard));
-    }
 
     @Test
     public void verificaCartaoELoNaoComecandoComBinInvalido() throws Exception {
@@ -135,6 +107,24 @@ public class EloCreditCardTest {
     @Test
     public void verificaSeOCartaoEstaNoRange() {
         String cardInRange = "6362970000457013";
+        assertTrue(isBrandElo(cardInRange));
+    }
+
+    @Test
+    public void verificaSeCartaoEstaNoPrimeiroRange() {
+        String cardInRange = "5066991234567890";
+        assertTrue(isBrandElo(cardInRange));
+    }
+
+    @Test
+    public void verificaSeCartaoEstaNoUltimoRange() {
+        String cardInRange = "6550211234567890";
+        assertTrue(isBrandElo(cardInRange));
+    }
+
+    @Test
+    public void verificaSeCartaoEhUltimoNoRange() {
+        String cardInRange = "6550581234567890";
         assertTrue(isBrandElo(cardInRange));
     }
 }

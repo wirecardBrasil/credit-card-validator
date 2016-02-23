@@ -14,8 +14,6 @@ public class EloCreditCard {
 
             new String[]{"506699", "506778"},
             new String[]{"509000", "509999"},
-            new String[]{"506699", "506778"},
-            new String[]{"509000", "509999"},
             new String[]{"650031", "650033"},
             new String[]{"650035", "650051"},
             new String[]{"650405", "650439"},
@@ -30,7 +28,7 @@ public class EloCreditCard {
     );
 
     public static boolean isBrandElo(final String number) {
-        if(number == null){
+        if (number == null) {
             return false;
         }
         return number.length() == 16
