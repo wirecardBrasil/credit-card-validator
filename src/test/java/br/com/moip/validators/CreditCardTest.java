@@ -63,13 +63,13 @@ public class CreditCardTest {
         assertFalse(creditCard.isValid());
     }
 
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void deveRetornarFalseCasoCartaoRecebeLetra(){
         CreditCard creditCard = new CreditCard("555a6667778884");
         assertFalse(creditCard.isValid());
     }
 
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void deveRetornarFalseCasoCartaoRecebeCaracterEspecial(){
         CreditCard creditCard = new CreditCard("5555 666677778884");
         assertFalse(creditCard.isValid());

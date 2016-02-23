@@ -12,7 +12,7 @@ public class CreditCard {
 
     public Brands getBrand() {
 
-        // As bandeiras são caraterizadss por conjuntos de BINs com sobre-posição.
+        // As bandeiras são caraterizadas por conjuntos de BINs com sobre-posição.
         // Identificar a bandeira correta por verificar primeiro a bandeira com BINs mais específicos.
         if (EloCreditCard.isBrandElo(creditCard)) {
             return Brands.ELO;
@@ -39,6 +39,6 @@ public class CreditCard {
     }
 
     public boolean isValid() {
-        return getBrand() != Brands.UNKNOWN;
+        return getBrand() != Brands.UNKNOWN && creditCard.matches("\\d{13,16}");
     }
 }
