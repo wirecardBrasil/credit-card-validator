@@ -128,4 +128,10 @@ public class CreditCardTest {
         CreditCard creditCard = new CreditCard("6370950000000005");
         assertTrue(creditCard.isValid());
     }
+
+    @Test
+    public void deveValidarCartaoCom14Digitos(){
+        CreditCard creditCard = new CreditCard("41111111111111");
+        assertFalse(creditCard.isValid());
+    }
 }
