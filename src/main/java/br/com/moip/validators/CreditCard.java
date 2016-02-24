@@ -1,6 +1,13 @@
 package br.com.moip.validators;
 
-import br.com.moip.creditcard.*;
+import br.com.moip.creditcard.AmexCreditCard;
+import br.com.moip.creditcard.Brands;
+import br.com.moip.creditcard.DinersCreditCard;
+import br.com.moip.creditcard.EloCreditCard;
+import br.com.moip.creditcard.HiperCreditCard;
+import br.com.moip.creditcard.HipercardCreditCard;
+import br.com.moip.creditcard.MasterCreditCard;
+import br.com.moip.creditcard.VisaCreditCard;
 
 public class CreditCard {
 
@@ -12,7 +19,7 @@ public class CreditCard {
 
     public Brands getBrand() {
 
-        // As bandeiras são caraterizadss por conjuntos de BINs com sobre-posição.
+        // As bandeiras são caraterizadas por conjuntos de BINs com sobre-posição.
         // Identificar a bandeira correta por verificar primeiro a bandeira com BINs mais específicos.
         if (EloCreditCard.isBrandElo(creditCard)) {
             return Brands.ELO;
@@ -39,6 +46,6 @@ public class CreditCard {
     }
 
     public boolean isValid() {
-        return getBrand() != Brands.UNKNOWN;
+        return getBrand() != Brands.UNKNOWN && creditCard != null && creditCard.matches("\\d{13,16}");
     }
 }
