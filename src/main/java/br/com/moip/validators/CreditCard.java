@@ -46,6 +46,6 @@ public class CreditCard {
     }
 
     public boolean isValid() {
-        return getBrand() != Brands.UNKNOWN && creditCard.matches("\\d{13,16}") && creditCard != null;
+        return getBrand() != Brands.UNKNOWN && creditCard != null && creditCard.matches("\\d{13,16}");
     }
 }
