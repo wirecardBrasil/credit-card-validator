@@ -1,6 +1,13 @@
 package br.com.moip.validators;
 
-import br.com.moip.creditcard.*;
+import br.com.moip.creditcard.AmexCreditCard;
+import br.com.moip.creditcard.Brands;
+import br.com.moip.creditcard.DinersCreditCard;
+import br.com.moip.creditcard.EloCreditCard;
+import br.com.moip.creditcard.HiperCreditCard;
+import br.com.moip.creditcard.HipercardCreditCard;
+import br.com.moip.creditcard.MasterCreditCard;
+import br.com.moip.creditcard.VisaCreditCard;
 
 public class CreditCard {
 
@@ -39,6 +46,6 @@ public class CreditCard {
     }
 
     public boolean isValid() {
-        return getBrand() != Brands.UNKNOWN && creditCard.matches("\\d{13,16}");
+        return getBrand() != Brands.UNKNOWN && creditCard.matches("\\d{13,16}") && creditCard != null;
     }
 }

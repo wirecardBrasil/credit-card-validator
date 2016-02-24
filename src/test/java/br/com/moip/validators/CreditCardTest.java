@@ -1,9 +1,16 @@
 package br.com.moip.validators;
 
-import br.com.moip.creditcard.Brands;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static br.com.moip.creditcard.Brands.AMERICAN_EXPRESS;
+import static br.com.moip.creditcard.Brands.DINERS;
+import static br.com.moip.creditcard.Brands.ELO;
+import static br.com.moip.creditcard.Brands.HIPER;
+import static br.com.moip.creditcard.Brands.HIPERCARD;
+import static br.com.moip.creditcard.Brands.MASTERCARD;
+import static br.com.moip.creditcard.Brands.VISA;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -12,43 +19,43 @@ public class CreditCardTest {
     @Test
     public void deveIdentificarBandeiraMaster() {
         CreditCard creditCard = new CreditCard("5555666677778884");
-        Assert.assertEquals(Brands.MASTERCARD, creditCard.getBrand());
+        assertEquals(MASTERCARD, creditCard.getBrand());
     }
 
     @Test
     public void deveIdentificarBandeiraVisa() {
         CreditCard creditCard = new CreditCard("4073020000000002");
-        Assert.assertEquals(Brands.VISA, creditCard.getBrand());
+        assertEquals(VISA, creditCard.getBrand());
     }
 
     @Test
     public void deveIdentificarBandeiraElo() {
         CreditCard creditCard = new CreditCard("6362970000457013");
-        Assert.assertEquals(Brands.ELO, creditCard.getBrand());
+        assertEquals(ELO, creditCard.getBrand());
     }
 
     @Test
     public void deveIdentificarBandeiraDinners() {
         CreditCard creditCard = new CreditCard("30111122223331");
-        Assert.assertEquals(Brands.DINERS, creditCard.getBrand());
+        assertEquals(DINERS, creditCard.getBrand());
     }
 
     @Test
     public void deveIdentificarBandeiraAmex() {
         CreditCard creditCard = new CreditCard("376411112222331");
-        Assert.assertEquals(Brands.AMERICAN_EXPRESS, creditCard.getBrand());
+        assertEquals(AMERICAN_EXPRESS, creditCard.getBrand());
     }
 
     @Test
     public void deveIdentificarBandeiraHipercard() {
         CreditCard creditCard = new CreditCard("6062825624254001");
-        Assert.assertEquals(Brands.HIPERCARD, creditCard.getBrand());
+        assertEquals(HIPERCARD, creditCard.getBrand());
     }
 
     @Test
     public void deveIdentificarBandeiraHiper() {
         CreditCard creditCard = new CreditCard("6370950000000005");
-        Assert.assertEquals(Brands.HIPER, creditCard.getBrand());
+        assertEquals(HIPER, creditCard.getBrand());
     }
 
     @Test

@@ -2,29 +2,17 @@ package br.com.moip.creditcard;
 
 import org.junit.Test;
 
+import static br.com.moip.creditcard.EloCreditCard.ELO_BINS;
 import static br.com.moip.creditcard.EloCreditCard.isBrandElo;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class EloCreditCardTest {
 
-    private static String[] ELO_BINS = {
-            "401178", "401179", "431274", "438935", "451416", "457393", "457631", "457632", "504175", "627780",
-            "636297", "636368"
-    };
-
-    @Test
-    public void verificaCartaoELoNaoComecandoComBinInvalido() throws Exception {
-        String validCard = "1111101234567890";
-        assertTrue(validCard.length() == 16);
-        assertFalse(isBrandElo(validCard));
-    }
-
     @Test
     public void verificaCartaoEloComecandoComQualquerBin() throws Exception {
         for (String bin : ELO_BINS) {
             String validLengthCard = bin + (bin.length() == 5 ? "01234567890" : "0123456789");
-            assertTrue(validLengthCard.length() == 16);
             assertTrue(isBrandElo(validLengthCard));
         }
     }
@@ -33,7 +21,6 @@ public class EloCreditCardTest {
     public void verificaCartaoEloNaoComecandoComQualquerBin() throws Exception {
         for (String bin : ELO_BINS) {
             String invalidLengthCard = bin + (bin.length() == 5 ? "012345678901" : "01234567890");
-            assertFalse(invalidLengthCard.length() == 16);
             assertFalse(isBrandElo(invalidLengthCard));
         }
     }
@@ -127,4 +114,5 @@ public class EloCreditCardTest {
         String cardInRange = "6550581234567890";
         assertTrue(isBrandElo(cardInRange));
     }
+
 }

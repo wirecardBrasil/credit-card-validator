@@ -5,12 +5,12 @@ import java.util.List;
 
 public class EloCreditCard {
 
-    private static List<String> ELO_BINS = Arrays.asList(
+    public static List<String> ELO_BINS = Arrays.asList(
             "401178", "401179", "431274", "438935", "451416", "457393", "457631", "457632", "504175", "627780",
             "636297", "636368"
     );
 
-    private static List<String[]> ELO_RANGES = Arrays.asList(
+    public static List<String[]> ELO_RANGES = Arrays.asList(
 
             new String[]{"506699", "506778"},
             new String[]{"509000", "509999"},
