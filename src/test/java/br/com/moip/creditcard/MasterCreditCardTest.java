@@ -85,4 +85,16 @@ public class MasterCreditCardTest {
         String newMasterBin = "2221001231231231";
         assertTrue(MasterCreditCard.isBrandMaster(newMasterBin));
     }
+
+    @Test
+    public void verificaSeCartaoMasterNaoEstaNoRangeNovo() {
+        String masterNotInRange = "2220001231231231";
+        assertFalse(MasterCreditCard.isBrandMaster(masterNotInRange));
+    }
+
+    @Test
+    public void verificaSeCartaoMasterEstaNoRangeNovo() {
+        String newMasterBin = "2720990000000005";
+        assertTrue(MasterCreditCard.isBrandMaster(newMasterBin));
+    }
 }

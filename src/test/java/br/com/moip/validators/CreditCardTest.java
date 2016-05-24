@@ -1,6 +1,5 @@
 package br.com.moip.validators;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static br.com.moip.creditcard.Brands.AMERICAN_EXPRESS;
@@ -59,9 +58,9 @@ public class CreditCardTest {
     }
 
     @Test
-    public void deveRetornarFalsaCasoCartaoForNulo() {
-        CreditCard creditCard = new CreditCard(null);
-        Assert.assertFalse(creditCard.isValid());
+    public void deveRetornarFalseCasoCartaoForNulo() {
+        CreditCard nullableCard = new CreditCard(null);
+        assertFalse(nullableCard.isValid());
     }
 
     @Test
