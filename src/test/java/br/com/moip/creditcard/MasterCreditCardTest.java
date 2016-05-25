@@ -56,13 +56,13 @@ public class MasterCreditCardTest {
         assertFalse(MasterCreditCard.isBrandMaster(invalidCard));
     }
 
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void verificaCartaoMasterComLetra() {
         String invalidCard = "5555asdf77778884";
         assertFalse(MasterCreditCard.isBrandMaster(invalidCard));
     }
 
-    @Test
+    @Test(expected = NumberFormatException.class)
     public void verificaCartaoMasterComCaracterEspecial() {
         String invalidCard = "555 666+7777888@";
         assertFalse(MasterCreditCard.isBrandMaster(invalidCard));
@@ -81,9 +81,9 @@ public class MasterCreditCardTest {
     }
 
     @Test
-    public void verificaNovoBinMaster() {
-        String newMasterBin = "2221001231231231";
-        assertTrue(MasterCreditCard.isBrandMaster(newMasterBin));
+    public void verificaSeCartaoMasterEstaNoComecoDoRange() {
+        String masterInitialRange = "2221001231231231";
+        assertTrue(MasterCreditCard.isBrandMaster(masterInitialRange));
     }
 
     @Test
@@ -93,8 +93,14 @@ public class MasterCreditCardTest {
     }
 
     @Test
-    public void verificaSeCartaoMasterEstaNoRangeNovo() {
-        String newMasterBin = "2720990000000005";
-        assertTrue(MasterCreditCard.isBrandMaster(newMasterBin));
+    public void verificaSeCartaoMasterEstaNoFinalDoRange() {
+        String masterFinalRange = "2720793872642452";
+        assertTrue(MasterCreditCard.isBrandMaster(masterFinalRange));
+    }
+
+    @Test
+    public void verificaSeCartaoMasterEstaEntreORange() {
+        String masterInRange = "2572098765432123";
+        assertTrue(MasterCreditCard.isBrandMaster(masterInRange));
     }
 }
