@@ -8,15 +8,15 @@ public class MasterCreditCard {
     public static List<String> MASTERCARD_NEW_RANGE = Arrays.asList("222100", "272099");
 
     public static boolean isBrandMaster(final String number) {
-        return number != null && number.matches("5[0-9]{15}") || number != null && isValidMasterBin(number);
+        return number != null && (number.matches("5[0-9]{15}") || isValidMasterBin(number));
     }
 
     private static boolean isValidMasterBin(String number) {
-        if (number.length() < 5 && number.length() != 16) {
+        if (number.length() < 5) {
             return false;
         }
 
-        for (int i = 0; i < MASTERCARD_NEW_RANGE.size(); i++) {
+        for (int i = 1; i < MASTERCARD_NEW_RANGE.size(); i += 2) {
             int startingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(0));
             int endingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(i));
             Integer parsedNumber = Integer.valueOf(number.substring(0, 6));
