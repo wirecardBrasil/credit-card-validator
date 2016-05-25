@@ -12,11 +12,11 @@ public class MasterCreditCard {
     }
 
     private static boolean isValidMasterBin(String number) {
-        if (number.length() < 5) {
+        if (number.length() < 6) {
             return false;
         }
 
-        for (int i = 0; i < MASTERCARD_NEW_RANGE.size(); i++) {
+        for (int i = 0; i < MASTERCARD_NEW_RANGE.size(); i+=2) {
             int startingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(i));
             int endingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(i+1));
             Integer parsedNumber = Integer.valueOf(number.substring(0, 6));
