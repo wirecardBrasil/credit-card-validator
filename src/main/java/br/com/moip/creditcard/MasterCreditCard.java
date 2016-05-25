@@ -16,9 +16,9 @@ public class MasterCreditCard {
             return false;
         }
 
-        for (int i = 1; i < MASTERCARD_NEW_RANGE.size(); i += 2) {
-            int startingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(0));
-            int endingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(i));
+        for (int i = 0; i < MASTERCARD_NEW_RANGE.size(); i ++) {
+            int startingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(i));
+            int endingRange = Integer.valueOf(MASTERCARD_NEW_RANGE.get(i+1));
             Integer parsedNumber = Integer.valueOf(number.substring(0, 6));
 
             if (parsedNumber >= startingRange && parsedNumber <= endingRange) return true;
