@@ -7,7 +7,7 @@ public class EloCreditCard {
 
     public static List<String> ELO_BINS = Arrays.asList(
             "401178", "401179", "431274", "438935", "451416", "457393", "457631", "457632", "504175", "627780",
-            "636297", "636368"
+            "636297", "636368", "636369"
     );
 
     public static List<String[]> ELO_RANGES = Arrays.asList(
@@ -32,9 +32,8 @@ public class EloCreditCard {
             return false;
         }
         return number.length() == 16
-                && (ELO_BINS.contains(number.substring(0, 5))
-                || ELO_BINS.contains(number.substring(0, 6)))
-                || isInEloRange(number);
+                && (ELO_BINS.contains(number.substring(0, 6))
+                || isInEloRange(number));
     }
 
     private static boolean isInEloRange(final String number) {

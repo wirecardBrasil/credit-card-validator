@@ -5,6 +5,7 @@ import org.junit.Test;
 import static br.com.moip.creditcard.EloCreditCard.ELO_BINS;
 import static br.com.moip.creditcard.EloCreditCard.isBrandElo;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 public class EloCreditCardTest {
@@ -113,6 +114,18 @@ public class EloCreditCardTest {
     public void verificaSeCartaoEhUltimoNoRange() {
         String cardInRange = "6550581234567890";
         assertTrue(isBrandElo(cardInRange));
+    }
+
+    @Test
+    public void verificaSeBin636368Funciona(){
+        String card = "6363681231231232";
+        assertTrue(isBrandElo(card));
+    }
+
+    @Test
+    public void verificaSeBin636369Funciona(){
+        String card = "6363691231231232";
+        assertTrue(isBrandElo(card));
     }
 
 }
