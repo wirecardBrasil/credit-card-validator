@@ -2,20 +2,19 @@ package br.com.moip.creditcard;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class HipercardCreditCardTest {
 
-    private static String[] HIPERCARD_BINS = {
-            "606282",
-    };
-
     @Test
     public void verificaCartaoHipercard() throws Exception {
-        for (String bin : HIPERCARD_BINS) {
-            String cardNumber = "6062825624254001";
-            assertTrue(cardNumber.length() == 16);
+        List<String> numbers = Arrays.asList("6062825624254001", "3841001111222233334",
+                "3841401111222233334", "3841601111222233334");
+        for (String cardNumber : numbers) {
             assertTrue(HipercardCreditCard.isBrandHipercard(cardNumber));
         }
     }
