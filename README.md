@@ -10,6 +10,17 @@
 
 ### Usando na sua aplicação
 
+#### Gradle
+
+- Adicionar no `build.gradle` do aplicativo:
+
+```compile  'br.com.moip:credit-card-validator:0.0.6' ```
+
+- Sincronizar o projeto
+
+
+#### Maven
+
 Adicionar a dependência no seu `pom.xml`
 
 ```xml
