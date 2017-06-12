@@ -68,14 +68,11 @@ public class CreditCardTest {
         CreditCard creditCard = new CreditCard("7532465fd187hbf1");
         assertFalse(creditCard.isValid());
     }
-
-    @Test(expected = NumberFormatException.class)
     public void deveRetornarFalseCasoCartaoRecebeLetra() {
         CreditCard creditCard = new CreditCard("555a6667778884");
         assertFalse(creditCard.isValid());
     }
 
-    @Test(expected = NumberFormatException.class)
     public void deveRetornarFalseCasoCartaoRecebeCaracterEspecial() {
         CreditCard creditCard = new CreditCard("5555 666677778884");
         assertFalse(creditCard.isValid());
@@ -138,6 +135,12 @@ public class CreditCardTest {
     @Test
     public void deveValidarCartaoCom14Digitos() {
         CreditCard creditCard = new CreditCard("41111111111111");
-        assertFalse(creditCard.isValid());
+        assertTrue(creditCard.isValid());
+    }
+
+    @Test
+    public void deveValidarCartaoComBinComEspaco() {
+        CreditCard creditCard = new CreditCard("  411111111111111");
+        assertTrue(creditCard.isValid());
     }
 }
