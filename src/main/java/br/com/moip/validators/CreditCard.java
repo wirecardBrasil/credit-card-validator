@@ -18,7 +18,7 @@ public class CreditCard {
     }
 
     public Brands getBrand() {
-        if (!isValid()) {
+        if (!isValid(false)) {
             return Brands.UNKNOWN;
         }
         this.creditCard = creditCard.trim();
@@ -48,7 +48,18 @@ public class CreditCard {
         return Brands.UNKNOWN;
     }
 
+    public boolean isValid(boolean validateBrand) {
+        boolean valid;
+        valid = creditCard != null && creditCard.trim().matches("\\d{13,16}");
+
+        if (valid && validateBrand) {
+            return Brands.UNKNOWN != getBrand();
+        }
+
+        return valid;
+    }
+
     public boolean isValid() {
-        return creditCard != null && creditCard.trim().matches("\\d{13,16}");
+        return isValid(true);
     }
 }
