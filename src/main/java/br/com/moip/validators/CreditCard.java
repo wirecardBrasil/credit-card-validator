@@ -18,47 +18,41 @@ public class CreditCard {
     }
 
     public Brands getBrand() {
-        if (validateBrand(false)) {
-            this.creditCard = creditCard.trim();
-            // As bandeiras são caraterizadas por conjuntos de BINs com sobre-posição.
-            // Identificar a bandeira correta por verificar primeiro a bandeira com BINs mais específicos.
-            if (EloCreditCard.isBrandElo(creditCard)) {
-                return Brands.ELO;
-            }
-            if (HiperCreditCard.isBrandHiper(creditCard)) {
-                return Brands.HIPER;
-            }
-            if (VisaCreditCard.isBrandVisa(creditCard)) {
-                return Brands.VISA;
-            }
-            if (MasterCreditCard.isBrandMaster(creditCard)) {
-                return Brands.MASTERCARD;
-            }
-            if (AmexCreditCard.isBrandAmex(creditCard)) {
-                return Brands.AMERICAN_EXPRESS;
-            }
-            if (DinersCreditCard.isBrandDiners(creditCard)) {
-                return Brands.DINERS;
-            }
-            if (HipercardCreditCard.isBrandHipercard(creditCard)) {
-                return Brands.HIPERCARD;
-            }
+        if (!validateNumber()) {
+            return Brands.UNKNOWN;
+        }
+        this.creditCard = creditCard.trim();
+        // As bandeiras são caraterizadas por conjuntos de BINs com sobre-posição.
+        // Identificar a bandeira correta por verificar primeiro a bandeira com BINs mais específicos.
+        if (EloCreditCard.isBrandElo(creditCard)) {
+            return Brands.ELO;
+        }
+        if (HiperCreditCard.isBrandHiper(creditCard)) {
+            return Brands.HIPER;
+        }
+        if (VisaCreditCard.isBrandVisa(creditCard)) {
+            return Brands.VISA;
+        }
+        if (MasterCreditCard.isBrandMaster(creditCard)) {
+            return Brands.MASTERCARD;
+        }
+        if (AmexCreditCard.isBrandAmex(creditCard)) {
+            return Brands.AMERICAN_EXPRESS;
+        }
+        if (DinersCreditCard.isBrandDiners(creditCard)) {
+            return Brands.DINERS;
+        }
+        if (HipercardCreditCard.isBrandHipercard(creditCard)) {
+            return Brands.HIPERCARD;
         }
         return Brands.UNKNOWN;
     }
 
-    public boolean validateBrand(boolean validateBrand) {
-        boolean valid;
-        valid = creditCard != null && creditCard.trim().matches("\\d{13,16}");
-
-        if (valid && validateBrand) {
-            return Brands.UNKNOWN != getBrand();
-        }
-
-        return valid;
+    public boolean validateNumber() {
+        return creditCard != null && creditCard.trim().matches("\\d{13,16}");
     }
 
     public boolean isValid() {
-        return validateBrand(true);
+        return Brands.UNKNOWN != getBrand();
     }
 }
