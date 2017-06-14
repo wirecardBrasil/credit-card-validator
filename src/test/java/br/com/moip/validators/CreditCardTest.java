@@ -135,12 +135,12 @@ public class CreditCardTest {
     @Test
     public void deveValidarCartaoCom14Digitos() {
         CreditCard creditCard = new CreditCard("41111111111111");
-        assertTrue(creditCard.isValid());
+        assertFalse(creditCard.isValid());
     }
 
     @Test
     public void deveValidarCartaoComBinComEspaco() {
         CreditCard creditCard = new CreditCard("  411111111111111");
-        assertTrue(creditCard.isValid());
+        assertFalse(creditCard.isValid());
     }
 }
