@@ -18,7 +18,7 @@ targetCompatibility = '1.7'
 
 group = 'br.com.moip'
 archivesBaseName = "credit-card-validator"
-version = '0.0.7'
+version = '0.0.8'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
