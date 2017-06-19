@@ -145,6 +145,12 @@ public class CreditCardTest {
     }
 
     @Test
+    public void deveValidarCartaoComEspacos() {
+        CreditCard creditCard = new CreditCard("4012 0010 3844 3335");
+        assertTrue(creditCard.isValid());
+    }
+
+    @Test
     public void deveRetornarTrueCasoCartaoEhHipercard19Digitos() {
         CreditCard creditCard = new CreditCard("3841000000000011111");
         assertTrue(creditCard.isValid());
