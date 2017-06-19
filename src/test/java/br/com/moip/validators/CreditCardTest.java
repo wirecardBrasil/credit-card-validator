@@ -143,4 +143,10 @@ public class CreditCardTest {
         CreditCard creditCard = new CreditCard("  411111111111111");
         assertFalse(creditCard.isValid());
     }
+
+    @Test
+    public void deveRetornarTrueCasoCartaoEhHipercard19Digitos() {
+        CreditCard creditCard = new CreditCard("3841000000000011111");
+        assertTrue(creditCard.isValid());
+    }
 }

@@ -49,7 +49,7 @@ public class CreditCard {
     }
 
     public boolean validateNumber() {
-        return creditCard != null && creditCard.trim().matches("\\d{13,16}");
+        return creditCard != null && creditCard.trim().matches("\\d{13,19}");
     }
 
     public boolean isValid() {
