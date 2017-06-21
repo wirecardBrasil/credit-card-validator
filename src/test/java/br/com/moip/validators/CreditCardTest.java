@@ -146,7 +146,7 @@ public class CreditCardTest {
 
     @Test
     public void deveValidarCartaoComEspacos() {
-        CreditCard creditCard = new CreditCard("4012 0010 3844 3335");
+        CreditCard creditCard = new CreditCard("4012.0010 3844  3335");
         assertTrue(creditCard.isValid());
     }
 
